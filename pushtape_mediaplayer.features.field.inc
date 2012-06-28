@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * pushtape_music.features.field.inc
+ * pushtape_discography.features.field.inc
  */
 
 /**
