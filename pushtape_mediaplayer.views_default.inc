@@ -33,20 +33,6 @@ function pushtape_mediaplayer_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = 0;
-  $handler->display->display_options['style_plugin'] = 'fluid_grid';
-  $handler->display->display_options['style_options']['items_width'] = '250';
-  $handler->display->display_options['style_options']['advanced_layout'] = array(
-    'align' => TRUE,
-    'margins' => TRUE,
-    'css3' => TRUE,
-  );
-  $handler->display->display_options['style_options']['list_alignment'] = 'center';
-  $handler->display->display_options['style_options']['items_alignment'] = 'center';
-  $handler->display->display_options['style_options']['items_h_margin'] = '1em';
-  $handler->display->display_options['style_options']['items_v_margin'] = '1em';
-  $handler->display->display_options['style_options']['box_shadow'] = '1';
-  $handler->display->display_options['style_options']['border_radius'] = '1';
-  $handler->display->display_options['row_plugin'] = 'fields';
   /* Relationship: Content: Audio (field_audio:fid) */
   $handler->display->display_options['relationships']['field_audio_fid']['id'] = 'field_audio_fid';
   $handler->display->display_options['relationships']['field_audio_fid']['table'] = 'field_data_field_audio';
@@ -227,26 +213,9 @@ function pushtape_mediaplayer_views_default_views() {
 
   /* Display: All Tracks Player Grid */
   $handler = $view->new_display('panel_pane', 'All Tracks Player Grid', 'tracks_all_pane');
-  $handler->display->display_options['display_description'] = 'lists all tracks';
-  $handler->display->display_options['pane_category']['name'] = 'Pushtape';
-  $handler->display->display_options['pane_category']['weight'] = '0';
 
   /* Display: All Tracks Jplayer */
   $handler = $view->new_display('panel_pane', 'All Tracks Jplayer', 'panel_pane_1');
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'jplayer';
-  $handler->display->display_options['style_options']['path_field'] = array(
-    'uri' => 'uri',
-  );
-  $handler->display->display_options['style_options']['autoplay'] = '0';
-  $handler->display->display_options['style_options']['volume'] = '80';
-  $handler->display->display_options['style_options']['muted'] = '0';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['pane_category']['name'] = 'Pushtape';
-  $handler->display->display_options['pane_category']['weight'] = '0';
   $export['pushtape_player_track_views'] = $view;
 
   return $export;
