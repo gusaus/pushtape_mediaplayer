@@ -11,8 +11,7 @@ projects[soundmanager2][version] = "2.x-dev"
 
 projects[jplayer][subdir] = contrib
 projects[jplayer][type] = module
-projects[jplayer][version] = 2.x-dev
-projects[jplayer][patch][] = http://drupal.org/files/hide-direct-link-1046744-16.patch
+projects[jplayer][version] = 2.0-beta1
 
 libraries[soundmanager2][download][type] = "get"
 libraries[soundmanager2][download][url] = "http://www.schillmania.com/projects/soundmanager2/download/soundmanagerv297a-20120318.zip"
