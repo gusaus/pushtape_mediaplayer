@@ -4,6 +4,9 @@ core = 7.x
 projects[media] = 1.2
 projects[media][subdir] = contrib
 
+projects[html5_media][version] = 1.0
+projects[html5_media][subdir] = contrib
+
 projects[libraries][version] = 1.0
 projects[libraries][subdir] = contrib
 
