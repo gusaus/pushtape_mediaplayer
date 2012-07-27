@@ -1,6 +1,10 @@
 api = 2
 core = 7.x
 
+projects[features][version] = 1.0
+projects[features][subdir] = contrib
+projects[features][type] = module
+
 projects[media] = 1.2
 projects[media][subdir] = contrib
 
