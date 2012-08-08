@@ -14,6 +14,7 @@ dependencies[] = mediaplaylist
 dependencies[] = pushtape_discography
 dependencies[] = strongarm
 dependencies[] = views
+dependencies[] = soundmanager2
 features[ctools][] = file_entity:file_default_displays:1
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
