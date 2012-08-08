@@ -20,9 +20,9 @@ function pushtape_mediaplayer_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'soundmanager2_directory';
+  $strongarm->name = 'sm2_path';
   $strongarm->value = 'profiles/pushtape/libraries/soundmanager2';
-  $export['soundmanager2_directory'] = $strongarm;
+  $export['sm2_path'] = $strongarm;
 
   return $export;
 }
