@@ -22,5 +22,6 @@ features[features_api][] = api:1
 features[field][] = node-track-field_audio
 features[file_display][] = audio__default__file_field_file_default
 features[variable][] = jplayer_directory
+features[variable][] = soundmanager2_directory
 features[views_view][] = pushtape_player_track_views
 project status url = http://apps.rosenstrauch.com/fserver
