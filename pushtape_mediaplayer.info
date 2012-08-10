@@ -25,4 +25,5 @@ features[file_display][] = audio__default__file_field_file_rendered
 features[variable][] = jplayer_directory
 features[variable][] = sm2_path
 features[views_view][] = pushtape_player
+features[views_view][] = pushtape_player_track_views
 project status url = http://apps.rosenstrauch.com/fserver
