@@ -24,12 +24,8 @@ projects[mediaplaylist][version] = 1.x-dev
 projects[mediaplaylist][subdir] = contrib
 
 projects[] = libraries
-projects[] = media
-projects[] = mediaplaylist
-projects[] = pushtape_music
 projects[] = strongarm
 projects[] = views
-
 
 projects[soundmanager2][version] = "2.x-dev"
 projects[soundmanager2][subdir] = contrib
