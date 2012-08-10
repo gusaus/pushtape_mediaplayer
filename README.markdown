@@ -16,4 +16,3 @@ The upstream branch has the proposed changes for zirafa to pull.
 
 ##7.x-1.x - Panels###
 The panels branch serves as development, playground and lab branch, where I try out new functions.
-

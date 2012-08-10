@@ -1,31 +1,25 @@
 api = 2
 core = 7.x
 
-projects[features][version] = 1.0
-projects[features][subdir] = contrib
-projects[features][type] = module
+; Panopoly - Contrib - Media TODO: find a better way to stay current with panoplolys version
 
-projects[media] = 1.2
+projects[media][version] = 2.x-dev
+projects[media][type] = module
 projects[media][subdir] = contrib
+projects[media][download][type] = git
+;projects[media][download][revision] = cc55948
+projects[media][download][branch] = 7.x-2.x
+
+;projects[media_soundcloud][version] = 1.0-alpha1
 
 projects[html5_media][version] = 1.0
 projects[html5_media][subdir] = contrib
 
-projects[libraries][version] = 1.0
-projects[libraries][subdir] = contrib
-
-projects[media_soundcloud][version] = 1.0-alpha1
-projects[media_soundcloud][subdir] = contrib
-
 projects[media_colorbox][version] = 1.0-rc1
 projects[media_colorbox][subdir] = contrib
 
-projects[mediaplaylist][version] = 1.x-dev
+projects[mediaplaylist][version] = 1.0-rc1
 projects[mediaplaylist][subdir] = contrib
-
-projects[] = libraries
-projects[] = strongarm
-projects[] = views
 
 projects[soundmanager2][version] = "2.x-dev"
 projects[soundmanager2][subdir] = contrib
@@ -33,9 +27,10 @@ projects[soundmanager2][subdir] = contrib
 projects[jplayer][subdir] = contrib
 projects[jplayer][type] = module
 projects[jplayer][version] = 2.0-beta1
+;projects[jplayer][patch][] = http://drupal.org/files/hide-direct-link-1046744-16.patch
 
 libraries[soundmanager2][download][type] = "get"
-libraries[soundmanager2][download][url] = "http://www.schillmania.com/projects/soundmanager2/download/soundmanagerv297a-20120318.zip"
+libraries[soundmanager2][download][url] = "http://www.schillmania.com/projects/soundmanager2/download/soundmanagerv297a-20120624.zip"
 libraries[soundmanager2][directory_name] = "soundmanager2"
 libraries[soundmanager2][type] = "library"
 

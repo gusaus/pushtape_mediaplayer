@@ -48,11 +48,9 @@ function pushtape_mediaplayer_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'file_entity',
-          'settings' => array(
-            'file_view_mode' => 'default',
-          ),
-          'type' => 'file_rendered',
+          'module' => 'mediaplaylist',
+          'settings' => array(),
+          'type' => 'mediaplaylist_links',
           'weight' => '10',
         ),
         'featured' => array(
@@ -61,20 +59,25 @@ function pushtape_mediaplayer_field_default_fields() {
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'full' => array(
+          'label' => 'above',
+          'module' => 'mediaplaylist',
+          'settings' => array(),
+          'type' => 'mediaplaylist_links',
+          'weight' => '10',
+        ),
         'mediaplaylist' => array(
           'label' => 'above',
-          'module' => 'jplayer',
+          'module' => 'soundmanager2',
           'settings' => array(
-            'autoplay' => 0,
-            'backgroundColor' => '000000',
-            'mode' => 'playlist',
-            'muted' => FALSE,
-            'preload' => 'metadata',
-            'repeat' => 'none',
-            'solution' => 'html, flash',
-            'volume' => 80,
+            'amplifier' => 1,
+            'diameter' => '25',
+            'eq' => 1,
+            'inline' => 0,
+            'visualization' => 1,
+            'waveform' => 1,
           ),
-          'type' => 'jplayer_player',
+          'type' => 'soundmanager2_ui360',
           'weight' => '0',
         ),
         'teaser' => array(
@@ -102,13 +105,17 @@ function pushtape_mediaplayer_field_default_fields() {
           'allowed_schemes' => array(
             'private' => 'private',
             'public' => 'public',
-            'soundcloud' => 'soundcloud',
           ),
           'allowed_types' => array(
-            'audio' => 'audio',
+            'audio' => 0,
             'default' => 0,
-            'image' => 0,
-            'video' => 'video',
+            'image' => 'image',
+            'video' => 0,
+          ),
+          'browser_plugins' => array(
+            'library' => 0,
+            'media_default--media_browser_1' => 0,
+            'upload' => 'upload',
           ),
           'progress_indicator' => 'throbber',
         ),

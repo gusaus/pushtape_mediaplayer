@@ -422,4 +422,3 @@ function pushtape_mediaplayer_views_default_views() {
 
   return $export;
 }
-
