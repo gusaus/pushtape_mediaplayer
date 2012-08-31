@@ -3,6 +3,11 @@ core = 7.x
 
 ; Panopoly - Contrib - Media TODO: find a better way to stay current with panoplolys version
 
+
+projects[file_entity][version] = 2.x-dev
+projects[file_entity][type] = module
+projects[file_entity][subdir] = contrib
+
 projects[media][version] = 2.x-dev
 projects[media][type] = module
 projects[media][subdir] = contrib
