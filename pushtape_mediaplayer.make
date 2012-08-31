@@ -3,7 +3,7 @@ core = 7.x
 
 ; Panopoly - Contrib - Media TODO: find a better way to stay current with panoplolys version
 
-projects[media][version] = 1.2
+projects[media][version] = 2.x-dev
 projects[media][type] = module
 projects[media][subdir] = contrib
 
