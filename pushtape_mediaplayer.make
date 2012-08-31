@@ -10,7 +10,8 @@ projects[media][download][type] = git
 ;projects[media][download][revision] = cc55948
 projects[media][download][branch] = 7.x-2.x
 
-;projects[media_soundcloud][version] = 1.0-alpha1
+projects[media_soundcloud][version] = 1.x-dev
+projects[media_soundcloud][subdir] = contrib
 
 projects[html5_media][version] = 1.0
 projects[html5_media][subdir] = contrib
