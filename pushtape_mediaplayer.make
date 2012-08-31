@@ -3,12 +3,9 @@ core = 7.x
 
 ; Panopoly - Contrib - Media TODO: find a better way to stay current with panoplolys version
 
-projects[media][version] = 2.x-dev
+projects[media][version] = 1.2
 projects[media][type] = module
 projects[media][subdir] = contrib
-projects[media][download][type] = git
-;projects[media][download][revision] = cc55948
-projects[media][download][branch] = 7.x-2.x
 
 projects[media_soundcloud][version] = 1.x-dev
 projects[media_soundcloud][subdir] = contrib
