@@ -1,27 +1,20 @@
 api = 2
 core = 7.x
 
-; Panopoly - Contrib - Media TODO: find a better way to stay current with panoplolys version
-
-
-projects[file_entity][version] = 2.x-dev
-projects[file_entity][type] = module
 projects[file_entity][subdir] = contrib
 
-projects[media][version] = 2.x-dev
-projects[media][type] = module
 projects[media][subdir] = contrib
 
 projects[media_soundcloud][version] = 1.x-dev
 projects[media_soundcloud][subdir] = contrib
 
-projects[html5_media][version] = 1.0
+;projects[html5_media][version] = 1.0
 projects[html5_media][subdir] = contrib
 
-projects[media_colorbox][version] = 1.0-rc1
+;projects[media_colorbox][version] = 1.0-rc1
 projects[media_colorbox][subdir] = contrib
 
-projects[mediaplaylist][version] = 1.0-rc1
+;projects[mediaplaylist][version] = 1.0-rc1
 projects[mediaplaylist][subdir] = contrib
 
 projects[soundmanager2][version] = "2.x-dev"
@@ -29,7 +22,7 @@ projects[soundmanager2][subdir] = contrib
 
 projects[jplayer][subdir] = contrib
 projects[jplayer][type] = module
-projects[jplayer][version] = 2.0-beta1
+;projects[jplayer][version] = 2.0-beta1
 ;projects[jplayer][patch][] = http://drupal.org/files/hide-direct-link-1046744-16.patch
 
 libraries[soundmanager2][download][type] = "get"
