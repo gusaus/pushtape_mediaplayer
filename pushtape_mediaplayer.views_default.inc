@@ -28,12 +28,20 @@ function pushtape_mediaplayer_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = 0;
-  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'field_album',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['row_class'] = 'grid-24';
+  $handler->display->display_options['style_options']['type'] = 'ol';
+  $handler->display->display_options['style_options']['class'] = 'grid-8';
+  $handler->display->display_options['style_options']['wrapper_class'] = 'item-list grid-24';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
@@ -93,6 +101,7 @@ function pushtape_mediaplayer_views_default_views() {
   $handler->display->display_options['fields']['field_audio']['id'] = 'field_audio';
   $handler->display->display_options['fields']['field_audio']['table'] = 'field_data_field_audio';
   $handler->display->display_options['fields']['field_audio']['field'] = 'field_audio';
+  $handler->display->display_options['fields']['field_audio']['label'] = '';
   $handler->display->display_options['fields']['field_audio']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_audio']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_audio']['alter']['absolute'] = 0;
@@ -106,7 +115,7 @@ function pushtape_mediaplayer_views_default_views() {
   $handler->display->display_options['fields']['field_audio']['alter']['strip_tags'] = 0;
   $handler->display->display_options['fields']['field_audio']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['field_audio']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['field_audio']['element_label_colon'] = 1;
+  $handler->display->display_options['fields']['field_audio']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_audio']['element_default_classes'] = 1;
   $handler->display->display_options['fields']['field_audio']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_audio']['empty_zero'] = 0;
@@ -114,9 +123,60 @@ function pushtape_mediaplayer_views_default_views() {
   $handler->display->display_options['fields']['field_audio']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_audio']['type'] = 'file_rendered';
   $handler->display->display_options['fields']['field_audio']['settings'] = array(
-    'file_view_mode' => 'default',
+    'file_view_mode' => 'media_original',
   );
   $handler->display->display_options['fields']['field_audio']['field_api_classes'] = 0;
+  /* Field: Content: Album */
+  $handler->display->display_options['fields']['field_album']['id'] = 'field_album';
+  $handler->display->display_options['fields']['field_album']['table'] = 'field_data_field_album';
+  $handler->display->display_options['fields']['field_album']['field'] = 'field_album';
+  $handler->display->display_options['fields']['field_album']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_album']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_album']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_album']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_album']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_album']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_album']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_album']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_album']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_album']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_album']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['field_album']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_album']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_album']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_album']['element_label_colon'] = 1;
+  $handler->display->display_options['fields']['field_album']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_album']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_album']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_album']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['field_album']['settings'] = array(
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_album']['field_api_classes'] = 0;
+  /* Field: Content: Artist */
+  $handler->display->display_options['fields']['field_artist_term']['id'] = 'field_artist_term';
+  $handler->display->display_options['fields']['field_artist_term']['table'] = 'field_data_field_artist_term';
+  $handler->display->display_options['fields']['field_artist_term']['field'] = 'field_artist_term';
+  $handler->display->display_options['fields']['field_artist_term']['label'] = '';
+  $handler->display->display_options['fields']['field_artist_term']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_artist_term']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_artist_term']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_artist_term']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_artist_term']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_artist_term']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_artist_term']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_artist_term']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_artist_term']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_artist_term']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['field_artist_term']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_artist_term']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_artist_term']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_artist_term']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_artist_term']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_artist_term']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_artist_term']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_artist_term']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['field_artist_term']['field_api_classes'] = 0;
   /* Sort criterion: Content: Release date (field_release_date) */
   $handler->display->display_options['sorts']['field_release_date_value']['id'] = 'field_release_date_value';
   $handler->display->display_options['sorts']['field_release_date_value']['table'] = 'field_data_field_release_date';
@@ -200,6 +260,57 @@ function pushtape_mediaplayer_views_default_views() {
   $handler->display->display_options['fields']['title']['hide_empty'] = 0;
   $handler->display->display_options['fields']['title']['empty_zero'] = 0;
   $handler->display->display_options['fields']['title']['link_to_node'] = 1;
+  /* Field: Content: Album */
+  $handler->display->display_options['fields']['field_album']['id'] = 'field_album';
+  $handler->display->display_options['fields']['field_album']['table'] = 'field_data_field_album';
+  $handler->display->display_options['fields']['field_album']['field'] = 'field_album';
+  $handler->display->display_options['fields']['field_album']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_album']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_album']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_album']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_album']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_album']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_album']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_album']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_album']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_album']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_album']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['field_album']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_album']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_album']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_album']['element_label_colon'] = 1;
+  $handler->display->display_options['fields']['field_album']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_album']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_album']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_album']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['field_album']['settings'] = array(
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_album']['field_api_classes'] = 0;
+  /* Field: Content: Artist */
+  $handler->display->display_options['fields']['field_artist_term']['id'] = 'field_artist_term';
+  $handler->display->display_options['fields']['field_artist_term']['table'] = 'field_data_field_artist_term';
+  $handler->display->display_options['fields']['field_artist_term']['field'] = 'field_artist_term';
+  $handler->display->display_options['fields']['field_artist_term']['label'] = '';
+  $handler->display->display_options['fields']['field_artist_term']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_artist_term']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_artist_term']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_artist_term']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_artist_term']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_artist_term']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_artist_term']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_artist_term']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_artist_term']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_artist_term']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['field_artist_term']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_artist_term']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_artist_term']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_artist_term']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_artist_term']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_artist_term']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_artist_term']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_artist_term']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['field_artist_term']['field_api_classes'] = 0;
 
   /* Display: Releases pane */
   $handler = $view->new_display('panel_pane', 'Releases pane', 'releases_all');
@@ -215,6 +326,27 @@ function pushtape_mediaplayer_views_default_views() {
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
+  $translatables['pushtape_player'] = array(
+    t('Master'),
+    t('Pushtape Player'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('No releases yet'),
+    t('No releases yet. Add a <a href="/node/add/track">new track!</a>'),
+    t('Album'),
+    t('Block'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('Releases pane'),
+    t('View panes'),
+    t('Releases Slideshow'),
+    t('Player Page'),
+  );
   $export['pushtape_player'] = $view;
 
   return $export;

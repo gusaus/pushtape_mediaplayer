@@ -14,7 +14,7 @@ projects[html5_media][subdir] = contrib
 projects[libraries][version] = 1.0
 projects[libraries][subdir] = contrib
 
-projects[media_soundcloud][version] = 1.x-dev
+projects[media_soundcloud][version] = 1.0-alpha1
 projects[media_soundcloud][subdir] = contrib
 
 projects[media_colorbox][version] = 1.0-rc1
