@@ -48,9 +48,11 @@ function pushtape_mediaplayer_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'mediaplaylist',
-          'settings' => array(),
-          'type' => 'mediaplaylist_links',
+          'module' => 'file_entity',
+          'settings' => array(
+            'file_view_mode' => 'media_small',
+          ),
+          'type' => 'file_rendered',
           'weight' => '10',
         ),
         'featured' => array(
