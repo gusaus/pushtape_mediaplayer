@@ -1,7 +1,7 @@
 name = Pushtape Mediaplayer
 description = better implementation
 core = 7.x
-package = Panopoly Apps
+package = Pushtape Apps
 php = 5.2.4
 version = 7.x-1.x-dev
 project = pushtape_mediaplayer
