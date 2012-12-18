@@ -50,7 +50,7 @@ function pushtape_mediaplayer_field_default_fields() {
           'label' => 'above',
           'module' => 'file_entity',
           'settings' => array(
-            'file_view_mode' => 'media_small',
+            'file_view_mode' => 'track_player',
           ),
           'type' => 'file_rendered',
           'weight' => '10',
