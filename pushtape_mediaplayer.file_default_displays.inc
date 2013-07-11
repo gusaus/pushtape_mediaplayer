@@ -71,14 +71,6 @@ function pushtape_mediaplayer_file_default_displays() {
 
   $file_display = new stdClass();
   $file_display->api_version = 1;
-  $file_display->name = 'audio__preview__file_field_media_large_icon';
-  $file_display->weight = 0;
-  $file_display->status = TRUE;
-  $file_display->settings = '';
-  $export['audio__preview__file_field_media_large_icon'] = $file_display;
-
-  $file_display = new stdClass();
-  $file_display->api_version = 1;
   $file_display->name = 'audio__track_player__file_field_soundmanager2_inline_player';
   $file_display->weight = -48;
   $file_display->status = TRUE;
