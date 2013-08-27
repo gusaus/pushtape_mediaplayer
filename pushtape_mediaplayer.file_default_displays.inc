@@ -92,7 +92,7 @@ function pushtape_mediaplayer_file_default_displays() {
   $file_display = new stdClass();
   $file_display->api_version = 1;
   $file_display->name = 'audio__default__media_soundcloud_audio';
-  $file_display->weight = -50;
+  $file_display->weight = -49;
   $file_display->status = TRUE;
   $file_display->settings = array(
     'width' => '100%',

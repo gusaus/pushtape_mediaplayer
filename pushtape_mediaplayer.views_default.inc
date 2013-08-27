@@ -23,6 +23,7 @@ function pushtape_mediaplayer_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Tracks';
+  $handler->display->display_options['css_class'] = 'widgets';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -74,12 +75,21 @@ function pushtape_mediaplayer_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'track' => 'track',
   );
+  /* Filter criterion: Content: Audio (field_audio:display) */
+  $handler->display->display_options['filters']['field_audio_display']['id'] = 'field_audio_display';
+  $handler->display->display_options['filters']['field_audio_display']['table'] = 'field_data_field_audio';
+  $handler->display->display_options['filters']['field_audio_display']['field'] = 'field_audio_display';
+  $handler->display->display_options['filters']['field_audio_display']['operator'] = 'not empty';
 
   /* Display: All Tracks (Soundmanager2) */
   $handler = $view->new_display('panel_pane', 'All Tracks (Soundmanager2)', 'panel_pane_3');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Listen';
   $handler->display->display_options['display_description'] = 'lists all tracks';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -94,7 +104,7 @@ function pushtape_mediaplayer_views_default_views() {
   $handler->display->display_options['fields']['field_audio_1']['label'] = '';
   $handler->display->display_options['fields']['field_audio_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_audio_1']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_audio_1']['type'] = 'soundmanager2_page_player';
+  $handler->display->display_options['fields']['field_audio_1']['type'] = 'soundmanager2_inline_player';
   $handler->display->display_options['fields']['field_audio_1']['settings'] = array(
     'pause' => 'pause',
     'text' => 'title',
@@ -123,7 +133,7 @@ function pushtape_mediaplayer_views_default_views() {
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'mediaplayer';
-  $handler->display->display_options['style_options']['mediafront_preset'] = 'allmedia';
+  $handler->display->display_options['style_options']['mediafront_preset'] = 'audio_player';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
@@ -227,7 +237,7 @@ function pushtape_mediaplayer_views_default_views() {
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'mediaplayer';
-  $handler->display->display_options['style_options']['mediafront_preset'] = 'allmedia';
+  $handler->display->display_options['style_options']['mediafront_preset'] = 'album_player';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
@@ -269,6 +279,7 @@ function pushtape_mediaplayer_views_default_views() {
   $handler->display->display_options['fields']['field_artwork']['table'] = 'field_data_field_artwork';
   $handler->display->display_options['fields']['field_artwork']['field'] = 'field_artwork';
   $handler->display->display_options['fields']['field_artwork']['label'] = '';
+  $handler->display->display_options['fields']['field_artwork']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_artwork']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_artwork']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_artwork']['settings'] = array(
@@ -322,6 +333,7 @@ function pushtape_mediaplayer_views_default_views() {
   $handler->display->display_options['fields']['field_video']['table'] = 'field_data_field_video';
   $handler->display->display_options['fields']['field_video']['field'] = 'field_video';
   $handler->display->display_options['fields']['field_video']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_video']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_video']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -546,6 +558,53 @@ function pushtape_mediaplayer_views_default_views() {
   $handler->display->display_options['filters']['field_featured_status_value']['field'] = 'field_featured_status_value';
   $handler->display->display_options['filters']['field_featured_status_value']['value'] = array(
     1 => '1',
+  );
+  $handler->display->display_options['pane_category']['name'] = 'Media Players';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: All Tracks (html5) */
+  $handler = $view->new_display('panel_pane', 'All Tracks (html5)', 'panel_pane_9');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Listen';
+  $handler->display->display_options['display_description'] = 'lists all tracks';
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Audio */
+  $handler->display->display_options['fields']['field_audio_1']['id'] = 'field_audio_1';
+  $handler->display->display_options['fields']['field_audio_1']['table'] = 'field_data_field_audio';
+  $handler->display->display_options['fields']['field_audio_1']['field'] = 'field_audio';
+  $handler->display->display_options['fields']['field_audio_1']['label'] = '';
+  $handler->display->display_options['fields']['field_audio_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_audio_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_audio_1']['type'] = 'soundmanager2_inline_player';
+  $handler->display->display_options['fields']['field_audio_1']['settings'] = array(
+    'pause' => 'pause',
+    'text' => 'filename',
+  );
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 0;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'track' => 'track',
   );
   $handler->display->display_options['pane_category']['name'] = 'Media Players';
   $handler->display->display_options['pane_category']['weight'] = '0';
