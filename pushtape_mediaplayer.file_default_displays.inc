@@ -13,7 +13,7 @@ function pushtape_mediaplayer_file_default_displays() {
   $file_display = new stdClass();
   $file_display->api_version = 1;
   $file_display->name = 'audio__album_player__file_field_mediafront_player';
-  $file_display->weight = -37;
+  $file_display->weight = -46;
   $file_display->status = FALSE;
   $file_display->settings = array(
     'preset' => 'audio_player',
@@ -23,29 +23,29 @@ function pushtape_mediaplayer_file_default_displays() {
   $file_display = new stdClass();
   $file_display->api_version = 1;
   $file_display->name = 'audio__album_player__file_field_soundmanager2_inline_player';
-  $file_display->weight = -46;
-  $file_display->status = FALSE;
+  $file_display->weight = -48;
+  $file_display->status = TRUE;
   $file_display->settings = array(
     'pause' => 'pause',
-    'text' => 'filename',
+    'text' => 'title',
   );
   $export['audio__album_player__file_field_soundmanager2_inline_player'] = $file_display;
 
   $file_display = new stdClass();
   $file_display->api_version = 1;
   $file_display->name = 'audio__album_player__file_field_soundmanager2_page_player';
-  $file_display->weight = -45;
-  $file_display->status = FALSE;
+  $file_display->weight = -49;
+  $file_display->status = TRUE;
   $file_display->settings = array(
     'pause' => 'pause',
-    'text' => 'filename',
+    'text' => 'title',
   );
   $export['audio__album_player__file_field_soundmanager2_page_player'] = $file_display;
 
   $file_display = new stdClass();
   $file_display->api_version = 1;
   $file_display->name = 'audio__album_player__file_field_soundmanager2_ui360';
-  $file_display->weight = -48;
+  $file_display->weight = -47;
   $file_display->status = TRUE;
   $file_display->settings = array(
     'pause' => 'pause',
@@ -62,7 +62,7 @@ function pushtape_mediaplayer_file_default_displays() {
   $file_display = new stdClass();
   $file_display->api_version = 1;
   $file_display->name = 'audio__album_player__media_soundcloud_audio';
-  $file_display->weight = -49;
+  $file_display->weight = -50;
   $file_display->status = TRUE;
   $file_display->settings = array(
     'width' => '100%',
@@ -104,10 +104,10 @@ function pushtape_mediaplayer_file_default_displays() {
   $file_display = new stdClass();
   $file_display->api_version = 1;
   $file_display->name = 'audio__track_player__file_field_mediafront_player';
-  $file_display->weight = 0;
+  $file_display->weight = -38;
   $file_display->status = FALSE;
   $file_display->settings = array(
-    'preset' => '',
+    'preset' => 'audio_player',
   );
   $export['audio__track_player__file_field_mediafront_player'] = $file_display;
 
@@ -115,17 +115,17 @@ function pushtape_mediaplayer_file_default_displays() {
   $file_display->api_version = 1;
   $file_display->name = 'audio__track_player__file_field_soundmanager2_inline_player';
   $file_display->weight = -48;
-  $file_display->status = FALSE;
+  $file_display->status = TRUE;
   $file_display->settings = array(
     'pause' => 'pause',
-    'text' => 'filename',
+    'text' => 'title',
   );
   $export['audio__track_player__file_field_soundmanager2_inline_player'] = $file_display;
 
   $file_display = new stdClass();
   $file_display->api_version = 1;
   $file_display->name = 'audio__track_player__file_field_soundmanager2_page_player';
-  $file_display->weight = 0;
+  $file_display->weight = -49;
   $file_display->status = TRUE;
   $file_display->settings = array(
     'pause' => 'pause',
@@ -136,7 +136,7 @@ function pushtape_mediaplayer_file_default_displays() {
   $file_display = new stdClass();
   $file_display->api_version = 1;
   $file_display->name = 'audio__track_player__file_field_soundmanager2_ui360';
-  $file_display->weight = 0;
+  $file_display->weight = -46;
   $file_display->status = FALSE;
   $file_display->settings = array(
     'pause' => 'pause',
@@ -153,7 +153,7 @@ function pushtape_mediaplayer_file_default_displays() {
   $file_display = new stdClass();
   $file_display->api_version = 1;
   $file_display->name = 'audio__track_player__media_soundcloud_audio';
-  $file_display->weight = -49;
+  $file_display->weight = -50;
   $file_display->status = TRUE;
   $file_display->settings = array(
     'width' => '100%',
