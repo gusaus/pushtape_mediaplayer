@@ -104,7 +104,7 @@ function pushtape_mediaplayer_file_default_displays() {
   $file_display = new stdClass();
   $file_display->api_version = 1;
   $file_display->name = 'audio__track_player__file_field_mediafront_player';
-  $file_display->weight = -38;
+  $file_display->weight = -46;
   $file_display->status = FALSE;
   $file_display->settings = array(
     'preset' => 'audio_player',
@@ -114,7 +114,7 @@ function pushtape_mediaplayer_file_default_displays() {
   $file_display = new stdClass();
   $file_display->api_version = 1;
   $file_display->name = 'audio__track_player__file_field_soundmanager2_inline_player';
-  $file_display->weight = -48;
+  $file_display->weight = -49;
   $file_display->status = TRUE;
   $file_display->settings = array(
     'pause' => 'pause',
@@ -125,7 +125,7 @@ function pushtape_mediaplayer_file_default_displays() {
   $file_display = new stdClass();
   $file_display->api_version = 1;
   $file_display->name = 'audio__track_player__file_field_soundmanager2_page_player';
-  $file_display->weight = -49;
+  $file_display->weight = -48;
   $file_display->status = TRUE;
   $file_display->settings = array(
     'pause' => 'pause',
@@ -136,7 +136,7 @@ function pushtape_mediaplayer_file_default_displays() {
   $file_display = new stdClass();
   $file_display->api_version = 1;
   $file_display->name = 'audio__track_player__file_field_soundmanager2_ui360';
-  $file_display->weight = -46;
+  $file_display->weight = -47;
   $file_display->status = FALSE;
   $file_display->settings = array(
     'pause' => 'pause',
