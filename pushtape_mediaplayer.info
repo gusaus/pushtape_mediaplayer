@@ -49,3 +49,11 @@ features_exclude[dependencies][mediaplaylist] = mediaplaylist
 features_exclude[dependencies][soundmanager2] = soundmanager2
 files[] = test/pushtape_mediaplayer.test
 project status url = http://apps.pushtape.openlearninglabs.org/content/pushtape-mediaplayer
+
+
+; Information added by drush on 2013-09-16
+version = "7.x-1.x-panels-dev"
+core = "7.x"
+project = "pushtape_mediaplayer"
+datestamp = "1379362196"
+
