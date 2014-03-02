@@ -15,7 +15,6 @@ dependencies[] = page_manager
 dependencies[] = strongarm
 dependencies[] = views
 dependencies[] = views_content
-apps[server] = http://apps.pushtape.openlearninglabs.org/app/query/pushtape
 datestamp = 1384243642
 features[ctools][] = file_entity:file_default_displays:1
 features[ctools][] = page_manager:pages_default:1
